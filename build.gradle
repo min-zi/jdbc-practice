@@ -10,8 +10,21 @@ repositories {
 }
 
 dependencies {
+    // 커넥션 풀 HikariCP 사용
+    implementation('com.zaxxer:HikariCP:5.0.1')
+    implementation('org.springframework:spring-jdbc:5.3.22')
+    implementation 'org.slf4j:slf4j-simple:1.7.25'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // 테스트코드 가독성 향상
+    testImplementation('org.assertj:assertj-core:3.22.0')
+
+    // 인메모리 디비 H2 사용
+    testImplementation('com.h2database:h2:2.1.214')
+
+    implementation('org.slf4j:slf4j-simple:1.7.25')
 }
 
 test {
